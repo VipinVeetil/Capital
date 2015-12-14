@@ -1,3 +1,0 @@
-print "yes"
-
-print "again"
