@@ -61,6 +61,10 @@
             argument = "test.py"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "new.py"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
