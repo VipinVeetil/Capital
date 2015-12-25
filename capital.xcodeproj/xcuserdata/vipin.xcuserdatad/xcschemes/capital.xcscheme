@@ -62,6 +62,10 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
+            argument = "run.py"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "analysis.py"
             isEnabled = "YES">
          </CommandLineArgument>

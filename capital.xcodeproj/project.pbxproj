@@ -20,21 +20,23 @@
 		FCA53DAB1C1F6FA0008979E8 /* simulations.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = simulations.py; sourceTree = "<group>"; };
 		FCA53DAC1C1F6FA9008979E8 /* start.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = start.py; sourceTree = "<group>"; };
 		FCA53DAD1C1F6FCA008979E8 /* analysis.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = analysis.py; sourceTree = "<group>"; };
+		FCA53DAE1C1F794E008979E8 /* run.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = run.py; sourceTree = "<group>"; usesTabs = 1; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		FCA53D861C1F6569008979E8 = {
 			isa = PBXGroup;
 			children = (
+				FCA53DA81C1F6F38008979E8 /* economic_functions.py */,
 				FCA53DA21C1F6E31008979E8 /* parameters.py */,
 				FCA53DA31C1F6ED3008979E8 /* goods_firm.py */,
 				FCA53DA41C1F6EE0008979E8 /* capital_firm.py */,
 				FCA53DA51C1F6EEB008979E8 /* capital_market.py */,
 				FCA53DA61C1F6EFA008979E8 /* goods_auctioneer.py */,
 				FCA53DA71C1F6F06008979E8 /* labor_auctioneer.py */,
-				FCA53DA81C1F6F38008979E8 /* economic_functions.py */,
 				FCA53DA91C1F6F5F008979E8 /* economy.py */,
 				FCA53DAA1C1F6F96008979E8 /* time_step.py */,
+				FCA53DAE1C1F794E008979E8 /* run.py */,
 				FCA53DAB1C1F6FA0008979E8 /* simulations.py */,
 				FCA53DAC1C1F6FA9008979E8 /* start.py */,
 				FCA53DAD1C1F6FCA008979E8 /* analysis.py */,
