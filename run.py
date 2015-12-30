@@ -35,14 +35,12 @@ class RunEconomy(object):
 		
 		self.depreciation = None
 		self.goods_demand_parameter_deterministic = None
+		self.goods_demand_volatility = None
 		self.goods_firm_exponents = None
-		self.is_goods_demand_stochastic = None
 		self.kinds_of_capital = None
 		self.labor_productivity = None
 		self.labor_supply = None
 		self.number_of_firms = None
-		self.stochastic_goods_demand_mean = None
-		self.stochastic_goods_demand_variance = None
 		self.time_steps = None
 		self.unit_of_capital = None
 		self.price_adjustment = None
@@ -63,7 +61,7 @@ class RunEconomy(object):
 		""" following data are computed from recorded data """
 
 		self.errors_weighted = []
-		self.relative_price_capital = []
+		self.capital_price_ratio = []
 		""" price of capital zero divided by price of capital one """
 		self.capital_stock_ratio = []
 		""" stock of capital zero divided by stock of capital one  """
@@ -89,8 +87,7 @@ class RunEconomy(object):
 		self.economy.labor_productivity = self.labor_productivity
 		self.economy.labor_supply = self.labor_supply
 		self.economy.number_of_firms = self.number_of_firms
-		self.economy.stochastic_goods_demand_mean = self.stochastic_goods_demand_mean
-		self.economy.stochastic_goods_demand_variance = self.stochastic_goods_demand_variance
+		self.economy.goods_demand_volatility = self.goods_demand_volatility
 		self.economy.unit_of_capital = self.unit_of_capital
 
 		self.economy.create_economy()
@@ -108,8 +105,6 @@ class RunEconomy(object):
 		self.time_step.economy = self.economy
 		self.time_step.initialize()
 		for time in xrange(self.time_steps):
-			if time % 100 == 0:
-				print "time step", time
 			self.time_step.labor_step()
 			self.time_step.capital_step()
 			self.time_step.goods_step()
@@ -118,24 +113,9 @@ class RunEconomy(object):
 			self.time_step.close_time_step()
 
 	def compute_run_statistics(self):
-		self.relative_price_capital = map(truediv, self.mean_price_capital[0], self.mean_price_capital[1])
+		self.capital_price_ratio = map(truediv, self.mean_price_capital[0], self.mean_price_capital[1])
 		""" price of capital zero divided by price of capital one """
 		self.capital_stock_ratio = map(truediv, self.capital_stock[0], self.capital_stock[1])
 		""" stock of capital zero divided by stock of capital one  """
 
-
-
-"""
-		market.create_firms()
-		for time in self.time_steps:
-			market.time_step()
-			if self.shock==True:
-                if time == self.shock_time:
-                    self.goods_firms_exponents = self.after_shock_exponents
-                    for j in self.goods_firms:
-                        j.exponents = self.goods_firms_exponents
-
-        self.compute_summary_statistics()
-		
-"""
 

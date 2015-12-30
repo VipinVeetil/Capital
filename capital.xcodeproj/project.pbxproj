@@ -206,6 +206,7 @@
 				FCA53D901C1F6569008979E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

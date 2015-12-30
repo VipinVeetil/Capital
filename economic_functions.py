@@ -15,6 +15,7 @@ Module description: functions that are commonly used in economics.
 from __future__ import division
 import math
 import copy
+import random
 
 class EconomicFunctions(object):
 	def __init__(self):
@@ -43,3 +44,8 @@ class EconomicFunctions(object):
 			value_increment = self.cobb_douglas(new_variables_list, exponents_list) - self.cobb_douglas(variables_list, exponents_list)
 			""" new value with additional unit of a variable minus old value """
 			return value_increment
+
+	def geometric_brownian_motion_single_value(self, drift, volatility, initial_value):
+		dt = 1
+		new_value = initial_value * math.exp((drift - ((volatility ** 2) / 2.0) * dt + volatility * random.normalvariate(0, dt * dt)))
+		return new_value

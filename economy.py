@@ -25,22 +25,20 @@ import goods_auctioneer
 import labor_auctioneer
 import parameters as para
 import random
+import copy
 
 class Economy(object):
 	def __init__(self):
 		""" parameters of the economy are listed in alphabetical order """
 		self.depreciation = None
-		self.is_goods_demand_stochastic = None
 		self.goods_demand_parameter_deterministic = None
+		self.goods_demand_volatility = None
 		self.goods_firm_exponents = None
-		self.is_goods_demand_stochastic = None
 		self.kinds_of_capital = None
 		self.labor_productivity = None
 		self.labor_supply = None
 		self.number_of_firms = None
 		self.price_adjustment = None
-		self.stochastic_goods_demand_mean = None
-		self.stochastic_goods_demand_variance_percent = None
 		self.unit_of_capital = None
 		
 		self.capital_firms = []
@@ -89,11 +87,11 @@ class Economy(object):
 		""" create a goods auctionner and assign parameters """
 		self.goods_auctioneer = goods_auctioneer.GoodsAuctioneer()
 		self.goods_auctioneer.goods_demand_parameter_deterministic = self.goods_demand_parameter_deterministic
+		self.goods_auctioneer.goods_demand_parameter_last_time_step = copy.copy(self.goods_demand_parameter_deterministic)
 		self.goods_auctioneer.goods_firms = self.goods_firms
-		self.goods_auctioneer.is_goods_demand_stochastic = self.is_goods_demand_stochastic
 		self.goods_auctioneer.labor_productivity = self.labor_productivity
-		self.goods_auctioneer.stochastic_goods_demand_mean = self.stochastic_goods_demand_mean
-		self.goods_auctioneer.stochastic_goods_demand_variance = self.stochastic_goods_demand_variance
+		self.goods_demand_parameter_last_time_step = self.goods_demand_parameter_deterministic
+		self.goods_auctioneer.goods_demand_volatility = self.goods_demand_volatility
 	
 	def create_labor_auctioneer(self):
 		""" create a labor auctioner and assign parameters """
@@ -104,7 +102,6 @@ class Economy(object):
 		self.labor_auctioneer.labor_supply = self.labor_supply
 		self.labor_auctioneer.unit_of_capital = self.unit_of_capital
 	
-
 	def create_economy(self):
 		self.create_capital_firms()
 		self.create_goods_firms()

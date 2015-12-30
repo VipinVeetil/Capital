@@ -21,6 +21,7 @@ class Parameters(object):
 		after_shock_exponents = None
 		depreciation = None
 		goods_demand_parameter_deterministic = None
+		goods_demand_volatility = None
 		goods_firm_exponents = None
 		is_goods_demand_stochastic = None
 		kinds_of_capital = None
@@ -34,4 +35,5 @@ class Parameters(object):
 		stochastic_goods_demand_variance = None
 		time_steps = None
 		unit_of_capital = None
+
 		

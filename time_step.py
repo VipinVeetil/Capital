@@ -89,6 +89,7 @@ class TimeStep(object):
 		""" goods auctioneer collects output from the goods firms """
 		self.economy.goods_auctioneer.compute_goods_price()
 		""" goods auctioneer computes market clearing price """
+		self.economy.goods_auctioneer.pass_price_to_goods_firms()
 	
 	def compute_statistics(self):
 		price_expectations = dict((k, []) for k in range(0, self.kinds_of_capital))
